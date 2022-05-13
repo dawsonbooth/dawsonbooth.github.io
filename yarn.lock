@@ -218,7 +218,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/helper-module-imports@npm:^7.10.4, @babel/helper-module-imports@npm:^7.12.13, @babel/helper-module-imports@npm:^7.16.7":
+"@babel/helper-module-imports@npm:*, @babel/helper-module-imports@npm:^7.10.4, @babel/helper-module-imports@npm:^7.12.13, @babel/helper-module-imports@npm:^7.16.7":
   version: 7.16.7
   resolution: "@babel/helper-module-imports@npm:7.16.7"
   dependencies:
@@ -1470,6 +1470,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/types@npm:*":
+  version: 7.17.10
+  resolution: "@babel/types@npm:7.17.10"
+  dependencies:
+    "@babel/helper-validator-identifier": ^7.16.7
+    to-fast-properties: ^2.0.0
+  checksum: 40cfc3f43a3ab7374df8ee6844793f804c65e7bea0fd1b090886b425106ba26e16e8fa698ae4b2caf2746083fe3e62f03f12997a5982e0d131700f17cbdcfca1
+  languageName: node
+  linkType: hard
+
 "@babel/types@npm:^7.0.0, @babel/types@npm:^7.12.6, @babel/types@npm:^7.16.0, @babel/types@npm:^7.16.7, @babel/types@npm:^7.16.8, @babel/types@npm:^7.17.0, @babel/types@npm:^7.3.0, @babel/types@npm:^7.3.3, @babel/types@npm:^7.4.4, @babel/types@npm:^7.8.3":
   version: 7.17.0
   resolution: "@babel/types@npm:7.17.0"
@@ -2503,6 +2513,13 @@ __metadata:
   version: 0.0.29
   resolution: "@types/json5@npm:0.0.29"
   checksum: e60b153664572116dfea673c5bda7778dbff150498f44f998e34b5886d8afc47f16799280e4b6e241c0472aef1bc36add771c569c68fc5125fc2ae519a3eb9ac
+  languageName: node
+  linkType: hard
+
+"@types/lodash@npm:^4.14.182":
+  version: 4.14.182
+  resolution: "@types/lodash@npm:4.14.182"
+  checksum: 7dd137aa9dbabd632408bd37009d984655164fa1ecc3f2b6eb94afe35bf0a5852cbab6183148d883e9c73a958b7fec9a9bcf7c8e45d41195add6a18c34958209
   languageName: node
   linkType: hard
 
@@ -4623,12 +4640,15 @@ __metadata:
   resolution: "dawsonbooth.github.io@workspace:."
   dependencies:
     "@tailwindcss/forms": ^0.5.0
+    "@types/lodash": ^4.14.182
     "@types/node": ^16.7.13
     "@types/react": ^18.0.0
     "@types/react-dom": ^18.0.0
     autoprefixer: ^10.4.5
+    babel-plugin-macros: ^3.1.0
     eslint: ^8.14.0
     eslint-config-react-app: ^7.0.1
+    lodash: ^4.17.21
     postcss: ^8.4.12
     postcss-import: ^14.1.0
     prettier: ^2.6.2
@@ -4640,6 +4660,8 @@ __metadata:
     react-scripts: 5.0.1
     tailwindcss: ^3.0.24
     typescript: ^4.4.2
+    valtio: ^1.6.0
+    valtio-persist: ^1.0.2
     web-vitals: ^2.1.0
   languageName: unknown
   linkType: soft
@@ -9882,6 +9904,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"proxy-compare@npm:2.1.0":
+  version: 2.1.0
+  resolution: "proxy-compare@npm:2.1.0"
+  checksum: e431403abbb52468045635f434846c55b388c3ccf4012efe729e3fa846513b5d49e2488328582d5be792e7b9b0ba5f5a111887b3a2c4f9a273fc432ab79c7b63
+  languageName: node
+  linkType: hard
+
 "psl@npm:^1.1.33":
   version: 1.8.0
   resolution: "psl@npm:1.8.0"
@@ -11786,6 +11815,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"use-sync-external-store@npm:1.0.0":
+  version: 1.0.0
+  resolution: "use-sync-external-store@npm:1.0.0"
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0-rc
+  checksum: f3df10af62625169d6a8cd8d4f38942dc6817aa27398fa7f474421fd574b0c4c83679b9d15f983f482c396ee1183416eb146814c81f44241e1480acd701ef018
+  languageName: node
+  linkType: hard
+
 "util-deprecate@npm:^1.0.1, util-deprecate@npm:^1.0.2, util-deprecate@npm:~1.0.1":
   version: 1.0.2
   resolution: "util-deprecate@npm:1.0.2"
@@ -11843,6 +11881,47 @@ __metadata:
     convert-source-map: ^1.6.0
     source-map: ^0.7.3
   checksum: 54ce92bec2727879626f623d02c8d193f0c7e919941fa373ec135189a8382265117f5316ea317a1e12a5f9c13d84d8449052a731fe3306fa4beaafbfa4cab229
+  languageName: node
+  linkType: hard
+
+"valtio-persist@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "valtio-persist@npm:1.0.2"
+  dependencies:
+    lodash: ^4.17.21
+  peerDependencies:
+    valtio: ^1.2.5
+  checksum: 9aef676a861b1373370b36fd23fb963a6eb5578281ee793204a9bd36566ff81e4d1a58ef0f7193eb239d518d1d03283d10dc5edb7b43eb762252459ea2dfb729
+  languageName: node
+  linkType: hard
+
+"valtio@npm:^1.6.0":
+  version: 1.6.0
+  resolution: "valtio@npm:1.6.0"
+  dependencies:
+    proxy-compare: 2.1.0
+    use-sync-external-store: 1.0.0
+  peerDependencies:
+    "@babel/helper-module-imports": ">=7.12"
+    "@babel/types": ">=7.13"
+    aslemammad-vite-plugin-macro: ">=1.0.0-alpha.1"
+    babel-plugin-macros: ">=3.0"
+    react: ">=16.8"
+    vite: ">=2.8.6"
+  peerDependenciesMeta:
+    "@babel/helper-module-imports":
+      optional: true
+    "@babel/types":
+      optional: true
+    aslemammad-vite-plugin-macro:
+      optional: true
+    babel-plugin-macros:
+      optional: true
+    react:
+      optional: true
+    vite:
+      optional: true
+  checksum: 75e015986a4d50aee472a031e434dc61a2aa7fe0673e386bdecdc2175a41f84b37344f35e749527c101fce225d8ba3c4fbfd22d026f810863a8899e650c4a6d8
   languageName: node
   linkType: hard
 
