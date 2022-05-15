@@ -1,14 +1,14 @@
 import React from 'react'
 import { Route, Routes } from 'react-router'
 import { BrowserRouter } from 'react-router-dom'
-import Home from '../../../home'
-import Projects from '../../../projects'
+import routes from './routes'
 
 const Router: React.FC = () => (
   <BrowserRouter>
     <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="projects" element={<Projects />} />
+      {Object.values(routes).map(route => (
+        <Route key={route.name} path={route.path} element={route.element} />
+      ))}
     </Routes>
   </BrowserRouter>
 )
