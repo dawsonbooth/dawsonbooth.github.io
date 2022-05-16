@@ -20,9 +20,6 @@ interface RepositoriesQuery {
             }
           }[]
         }
-        primaryLanguage: {
-          name: string
-        }
       }[]
     }
   }
@@ -38,6 +35,5 @@ export const fetchProjects = async (): Promise<Project[]> => {
     forks: repo.forkCount,
     homepage: repo.homepageUrl,
     tags: repo.repositoryTopics.edges.map(edge => edge.node.topic.name),
-    language: repo.primaryLanguage.name,
   }))
 }

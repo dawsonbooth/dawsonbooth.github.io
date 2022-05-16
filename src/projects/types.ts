@@ -5,5 +5,4 @@ export interface Project {
   forks: number
   homepage: string
   tags: string[]
-  language: string
 }

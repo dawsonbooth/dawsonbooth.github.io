@@ -15,9 +15,6 @@ export const repositories = gql`
           shortDescriptionHTML
           stargazerCount
           forkCount
-          primaryLanguage {
-            name
-          }
           repositoryTopics(first: 10) {
             edges {
               node {
