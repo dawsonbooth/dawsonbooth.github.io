@@ -1,3 +1,4 @@
+import { FilterIcon, SearchIcon } from '@heroicons/react/outline'
 import React, { useEffect, useMemo, useState } from 'react'
 import { useQuery } from 'react-query'
 import Layout from '../common/components/layout'
@@ -67,19 +68,21 @@ const ProjectsPage: React.FC = () => {
       <div className="flex flex-col items-center p-6">
         <div className="flex flex-col items-center gap-6 max-w-screen-lg">
           <h1 className="text-3xl font-bold">Personal Projects</h1>
-          <div className="flex justify-between gap-2 px-2 items-center bg-white">
-            search icon
+          <div className="flex justify-between gap-2 px-2 items-center bg-white rounded-xl">
+            <button className="p-2">
+              {/* TODO: Focus search box */}
+              <SearchIcon className="h-5 w-5 text-slate-500" />
+            </button>
             <input
               type="text"
               placeholder="Search for a project..."
               disabled={!projects}
               className="border-0"
             />
-            <input // TODO: Label
-              type="checkbox"
-              defaultChecked={isFilterEnabled}
-              onChange={() => setIsFilterEnabled(v => !v)}
-            />
+            <button onClick={() => setIsFilterEnabled(v => !v)} className="p-2">
+              {/* TODO: Extract icon wrapper */}
+              <FilterIcon className="h-5 w-5 text-slate-500" />
+            </button>
           </div>
           {isFilterEnabled && (
             <>

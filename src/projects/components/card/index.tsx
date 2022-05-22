@@ -6,6 +6,7 @@ interface Props {
 }
 
 const Card: React.FC<Props> = ({ project }) => {
+  // TODO: Skeleton
   if (!project) return <div className="rounded-lg"></div>
 
   return (
