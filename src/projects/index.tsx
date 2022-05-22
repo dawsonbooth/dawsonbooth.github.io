@@ -3,6 +3,7 @@ import { useQuery } from 'react-query'
 import Layout from '../common/components/layout'
 import { fetchProjects } from './api'
 import Card from './components/card'
+import Tag from './components/tag'
 
 const ProjectsPage: React.FC = () => {
   const { data: projects } = useQuery('projects', fetchProjects)
@@ -66,7 +67,7 @@ const ProjectsPage: React.FC = () => {
       <div className="flex flex-col items-center p-6">
         <div className="flex flex-col items-center gap-6 max-w-screen-lg">
           <h1 className="text-3xl font-bold">Personal Projects</h1>
-          <div className="flex justify-between gap-2 px-2 items-center rounded-full bg-white">
+          <div className="flex justify-between gap-2 px-2 items-center bg-white">
             search icon
             <input
               type="text"
@@ -90,25 +91,21 @@ const ProjectsPage: React.FC = () => {
                   onChange={() => setAreTagHuesRandom(v => !v)}
                 />
               </div>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2 justify-center">
                 {tags.map(tag => (
-                  <button
+                  <Tag
                     key={tag}
+                    hue={tagHues[tag]}
+                    active={selectedTags[tag]}
                     onClick={() => setSelectedTags(prev => ({ ...prev, [tag]: !prev[tag] }))}
-                    className="rounded-full px-2 py-1 select-none whitespace-nowrap"
-                    style={{
-                      // TODO: Investigate style prop usage for dynamic values
-                      backgroundColor: `hsl(${tagHues[tag]}, 50%, 75%)`,
-                      opacity: selectedTags[tag] ? 1 : 0.5,
-                    }}
                   >
                     {tag}
-                  </button>
+                  </Tag>
                 ))}
               </div>
             </>
           )}
-          <div className="grid md:grid-cols-2 gap-8 ">
+          <div className="flex flex-col items-stretch gap-8 md:grid md:grid-cols-2">
             {projects?.map(project => (
               <Card key={project.name} project={project} />
             ))}
