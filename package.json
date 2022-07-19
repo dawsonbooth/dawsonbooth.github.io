@@ -7,7 +7,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "format": "prettier -w src"
+    "format": "prettier -w src",
+    "lint": "eslint src",
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
     "@heroicons/react": "^1.0.6",
