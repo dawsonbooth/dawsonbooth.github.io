@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import proxyWithPersist from 'valtio-persist'
 import { useProxy } from 'valtio/macro'
 import { persistence } from '../../store'

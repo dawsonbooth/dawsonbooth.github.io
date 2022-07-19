@@ -1,5 +1,5 @@
 import { mix } from 'polished'
-import React from 'react'
+import * as React from 'react'
 
 interface Props {
   hue: number
