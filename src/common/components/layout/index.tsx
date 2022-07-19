@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Link } from 'react-router-dom'
-import routes from '../../providers/router/routes'
+import routes from '../../routes'
 
 interface Props {
   children: React.ReactNode | React.ReactNode[]

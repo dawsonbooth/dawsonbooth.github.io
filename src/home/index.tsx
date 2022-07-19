@@ -1,12 +1,9 @@
-import React from 'react'
-import Layout from '../common/components/layout'
+import * as React from 'react'
 
-const HomePage: React.FC = () => {
-  return (
-    <Layout>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
-    </Layout>
-  )
-}
+const Contents: React.FC = () => <h1 className="text-3xl font-bold underline">Hello world!</h1>
 
-export default HomePage
+export const Fallback: React.FC = () => <>...</>
+
+const Home: React.FC = () => <Contents />
+
+export default Home

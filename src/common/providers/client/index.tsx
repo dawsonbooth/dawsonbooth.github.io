@@ -5,7 +5,7 @@ import { ReactQueryDevtools } from 'react-query/devtools'
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
-      // suspense: true,
+      suspense: true,
       staleTime: Infinity,
     },
   },
