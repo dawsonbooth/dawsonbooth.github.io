@@ -1,7 +1,6 @@
 {
   "arrowParens": "avoid",
   "jsxSingleQuote": false,
-  "parser": "typescript",
   "printWidth": 100,
   "quoteProps": "as-needed",
   "semi": false,
