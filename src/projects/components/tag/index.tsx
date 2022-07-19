@@ -12,7 +12,7 @@ const Tag: React.FC<Props> = ({ hue, active, onClick, children }) => {
   return (
     <button
       onClick={onClick}
-      className="rounded-full px-2 py-1 text-sm select-none whitespace-nowrap"
+      className="select-none whitespace-nowrap rounded-full px-2 py-1 text-sm"
       style={{
         // TODO: Investigate style prop usage for dynamic values
         backgroundColor: mix(0.5, `hsl(${hue}, 60%, 75%)`, 'white'),

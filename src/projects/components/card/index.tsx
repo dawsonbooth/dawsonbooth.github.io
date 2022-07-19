@@ -14,7 +14,7 @@ const Card: React.FC<Props> = ({ project }) => {
       href={project.homepage}
       target="_blank"
       rel="noreferrer"
-      className="flex flex-col gap-2 rounded-lg bg-white p-6 shadow-lg hover:shadow-xl hover:scale-105 transition duration-100"
+      className="flex flex-col gap-2 rounded-lg bg-white p-6 shadow-lg transition duration-100 hover:scale-105 hover:shadow-xl"
     >
       <h1 className="font-bold">{project.name}</h1>
       <p>{project.description}</p>

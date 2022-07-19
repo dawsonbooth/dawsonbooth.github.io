@@ -64,9 +64,9 @@ const Contents: React.FC = () => {
 
   return (
     <div className="flex flex-col items-center p-6">
-      <div className="flex flex-col items-center gap-6 max-w-screen-lg">
+      <div className="flex max-w-screen-lg flex-col items-center gap-6">
         <h1 className="text-3xl font-bold">Personal Projects</h1>
-        <div className="flex justify-between gap-2 px-2 items-center bg-white rounded-xl">
+        <div className="flex items-center justify-between gap-2 rounded-xl bg-white px-2">
           <button className="p-2">
             {/* TODO: Focus search box */}
             <SearchIcon className="h-5 w-5 text-slate-500" />
@@ -84,7 +84,7 @@ const Contents: React.FC = () => {
         </div>
         {isFilterEnabled && (
           <>
-            <div className="self-start flex items-center">
+            <div className="flex items-center self-start">
               <h2 className="text-2xl font-bold">Filter by tag</h2>
               <input // TODO: Label
                 type="checkbox"
@@ -92,7 +92,7 @@ const Contents: React.FC = () => {
                 onChange={() => setAreTagHuesRandom(v => !v)}
               />
             </div>
-            <div className="flex flex-wrap gap-2 justify-center">
+            <div className="flex flex-wrap justify-center gap-2">
               {tags.map(tag => (
                 <Tag
                   key={tag}

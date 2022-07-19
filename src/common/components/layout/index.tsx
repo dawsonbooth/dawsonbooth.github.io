@@ -7,11 +7,11 @@ interface Props {
 }
 
 const Layout: React.FC<Props> = ({ children }) => (
-  <div className="flex flex-col items-stretch min-h-screen w-screen bg-slate-100">
-    <header className="flex justify-center shadow-md bg-white">
-      <div className="flex gap-2 p-2 max-w-screen-lg">
+  <div className="flex min-h-screen w-screen flex-col items-stretch bg-slate-100">
+    <header className="flex justify-center bg-white shadow-md">
+      <div className="flex max-w-screen-lg gap-2 p-2">
         {Object.values(routes).map(route => (
-          <Link to={route.path} key={route.name} className="p-2 rounded-md active:bg-slate-100">
+          <Link to={route.path} key={route.name} className="rounded-md p-2 active:bg-slate-100">
             {route.name}
           </Link>
         ))}
