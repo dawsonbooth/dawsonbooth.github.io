@@ -1,6 +1,22 @@
 import * as React from 'react'
+import Markdown from 'react-markdown'
+import { useQuery } from 'react-query'
+import rehypeRaw from 'rehype-raw'
+import { fetchAbout } from './api'
 
-const Contents: React.FC = () => <h1 className="text-3xl font-bold underline">Hello world!</h1>
+const Contents: React.FC = () => {
+  const { data: about } = useQuery('about', fetchAbout)
+
+  return (
+    <div className="flex flex-col items-center p-6">
+      {about && (
+        <article className="prose">
+          <Markdown rehypePlugins={[rehypeRaw]}>{about}</Markdown>
+        </article>
+      )}
+    </div>
+  )
+}
 
 export const Fallback: React.FC = () => <>...</>
 
