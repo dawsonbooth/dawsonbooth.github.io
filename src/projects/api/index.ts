@@ -1,4 +1,4 @@
-import { requestGitHub } from '../../common/api'
+import request from 'graphql-request'
 import { Project } from '../types'
 import { repositories } from './queries'
 
@@ -26,7 +26,14 @@ interface RepositoriesQuery {
 }
 
 export const fetchProjects = async (): Promise<Project[]> => {
-  const data = await requestGitHub<RepositoriesQuery>(repositories)
+  const data = await request<RepositoriesQuery>(
+    'https://api.github.com/graphql',
+    repositories,
+    undefined,
+    {
+      Authorization: `Bearer ${process.env.REACT_APP_GITHUB_TOKEN}`,
+    },
+  )
 
   return data.user.repositories.nodes.map(repo => ({
     name: repo.name,
