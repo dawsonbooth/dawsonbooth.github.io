@@ -1,10 +1,16 @@
-import { useLocation } from 'react-router'
-import { Page } from './types'
+import { matchPath, useLocation } from 'react-router'
+import { Page } from './constants'
+import home from './home'
+import projects from './projects'
 
-export const useCurrentPage = (): Page => {
-  const location = useLocation()
+const isCurrentPage = (pageRoot: string, currentPath: string): boolean =>
+  !!matchPath(`${pageRoot}/*`, currentPath)
 
-  // TODO: Return current page
+export const useCurrentPage = (): Page | null => {
+  const { pathname } = useLocation()
 
-  return Page.Home
+  if (isCurrentPage(home.path, pathname)) return Page.Home
+  if (isCurrentPage(projects.path, pathname)) return Page.Projects
+
+  return null
 }

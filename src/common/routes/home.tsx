@@ -4,7 +4,7 @@ import { Route } from './types'
 
 const Home = React.lazy(() => import('../../home'))
 
-const route: Route = {
+const home: Route = {
   name: 'Home',
   path: '/',
   element: (
@@ -14,4 +14,4 @@ const route: Route = {
   ),
 }
 
-export default route
+export default home

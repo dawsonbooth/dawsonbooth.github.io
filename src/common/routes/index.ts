@@ -1,12 +1,6 @@
-import home from './home'
-import projects from './projects'
-import { Page, Route } from './types'
+import { Page } from './constants'
+import { useCurrentPage } from './hooks'
+import routes from './routes'
 
-const routes: {
-  [P in Page]: Route
-} = {
-  [Page.Home]: home,
-  [Page.Projects]: projects,
-}
-
+export { Page, useCurrentPage }
 export default routes
