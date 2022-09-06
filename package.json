@@ -3,15 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "format": "prettier -w src",
-    "lint": "eslint src",
-    "type-check": "tsc --noEmit"
+    "start": "craco start",
+    "build": "craco build",
+    "format": "prettier --write 'src/**/*.{ts,tsx}'",
+    "lint:code": "eslint 'src/**/*.{ts,tsx}'",
+    "lint:types": "yarn tsc --noEmit",
+    "lint:formatting": "prettier --check src",
+    "lint": "yarn lint:code && yarn lint:types && yarn lint:formatting"
   },
   "dependencies": {
+    "@craco/craco": "^6.4.5",
     "@heroicons/react": "^1.0.6",
     "graphql": "^16.5.0",
     "graphql-request": "^4.3.0",

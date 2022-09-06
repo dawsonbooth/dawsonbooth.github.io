@@ -2,11 +2,11 @@ import * as React from 'react'
 import ReactDOM from 'react-dom/client'
 import { Route, Routes } from 'react-router'
 import { BrowserRouter } from 'react-router-dom'
-import Layout from './common/components/layout'
-import * as Provider from './common/providers'
-import routes from './common/routes'
-import './index.css'
-import reportWebVitals from './reportWebVitals'
+import Layout from '@/common/components/layout'
+import * as Provider from '@/common/providers'
+import routes from '@/common/routes'
+import '@/index.css'
+import reportWebVitals from '@/reportWebVitals'
 
 const root = ReactDOM.createRoot(document.getElementById('root')!)
 root.render(
