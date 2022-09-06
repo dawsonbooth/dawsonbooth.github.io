@@ -20,6 +20,10 @@ const Contents: React.FC = () => {
 
 export const Fallback: React.FC = () => <>...</>
 
-const Home: React.FC = () => <Contents />
+const Home: React.FC = () => (
+  <React.Suspense fallback={<Fallback />}>
+    <Contents />
+  </React.Suspense>
+)
 
 export default Home

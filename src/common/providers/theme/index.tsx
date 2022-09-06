@@ -22,7 +22,7 @@ const ThemeProvider: React.FC<Props> = ({ children }) => {
     store.theme === 'dark' ||
     (store.theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)
 
-  return <div className={isDarkModeEnabled ? 'dark' : undefined}>{children}</div>
+  return <div className={`contents ${isDarkModeEnabled && 'dark'}`}>{children}</div>
 }
 
 export default ThemeProvider

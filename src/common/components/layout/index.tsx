@@ -12,7 +12,7 @@ const Layout: React.FC<Props> = ({ children }) => {
   return (
     <div className="flex min-h-screen w-screen flex-col items-stretch bg-slate-100">
       <header className="flex justify-center bg-white shadow-md">
-        <div className="flex max-w-screen-lg gap-2 p-2">
+        <nav className="flex max-w-screen-lg gap-2 p-2">
           {Object.entries(routes).map(([page, route]) => (
             <Link
               to={route.path}
@@ -24,7 +24,7 @@ const Layout: React.FC<Props> = ({ children }) => {
               {route.name}
             </Link>
           ))}
-        </div>
+        </nav>
       </header>
       <main className="flex-1">{children}</main>
     </div>
