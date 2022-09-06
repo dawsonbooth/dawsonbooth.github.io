@@ -3,7 +3,7 @@ extensions:
     cacheSchemaFileForLookup: true
 projects:
   projects:
-    schema: 
+    schema:
       - https://api.github.com/graphql:
         headers:
           Authorization: Bearer ${REACT_APP_GITHUB_TOKEN}
