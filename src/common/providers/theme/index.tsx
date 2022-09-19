@@ -1,6 +1,5 @@
 import * as React from 'react'
 import proxyWithPersist from 'valtio-persist'
-import { useProxy } from 'valtio/macro'
 import { persistence } from '../../store'
 
 const store = proxyWithPersist<{ theme: 'light' | 'dark' | 'system' }>({
@@ -16,8 +15,6 @@ interface Props {
 }
 
 const ThemeProvider: React.FC<Props> = ({ children }) => {
-  useProxy(store)
-
   const isDarkModeEnabled =
     store.theme === 'dark' ||
     (store.theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)
