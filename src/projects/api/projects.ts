@@ -61,7 +61,7 @@ const fetchProjects = async (): Promise<Project[]> => {
     document,
     undefined,
     {
-      Authorization: `Bearer ${process.env.REACT_APP_GITHUB_TOKEN}`,
+      Authorization: `Bearer ${import.meta.env.VITE_GITHUB_TOKEN}`,
     },
   )
 
