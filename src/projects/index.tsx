@@ -45,22 +45,6 @@ const Contents: React.FC = () => {
   }, [tags])
 
   const [isFilterEnabled, setIsFilterEnabled] = React.useState<boolean>(false)
-  const [areTagHuesRandom, setAreTagHuesRandom] = React.useState<boolean>(false)
-
-  const tagHues = React.useMemo(
-    () =>
-      tags.reduce<Record<string, number>>((record, tag, index) => {
-        const hue = areTagHuesRandom
-          ? Math.round(Math.random() * 255)
-          : Math.round((index / (tags.length - 1)) * 255)
-
-        return {
-          ...record,
-          [tag]: hue,
-        }
-      }, {}),
-    [areTagHuesRandom, tags],
-  )
 
   return (
     <div className="flex flex-col items-center p-6">
@@ -84,19 +68,11 @@ const Contents: React.FC = () => {
         </div>
         {isFilterEnabled && (
           <>
-            <div className="flex items-center self-start">
-              <h2 className="text-2xl font-bold">Filter by tag</h2>
-              <input // TODO: Label
-                type="checkbox"
-                defaultChecked={areTagHuesRandom}
-                onChange={() => setAreTagHuesRandom(v => !v)}
-              />
-            </div>
+            <h2 className="self-start text-2xl font-bold">Filter by tag</h2>
             <div className="flex flex-wrap justify-center gap-2">
               {tags.map(tag => (
                 <Tag
                   key={tag}
-                  hue={tagHues[tag]}
                   active={selectedTags[tag]}
                   onClick={() => setSelectedTags(prev => ({ ...prev, [tag]: !prev[tag] }))}
                 >
