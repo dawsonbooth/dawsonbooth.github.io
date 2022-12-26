@@ -1,4 +1,4 @@
-import { FilterIcon, SearchIcon } from '@heroicons/react/outline'
+import { FunnelIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline'
 import * as React from 'react'
 import { useQuery } from 'react-query'
 import { fetchProjects } from './api'
@@ -53,7 +53,7 @@ const Contents: React.FC = () => {
         <div className="flex items-center justify-between gap-2 rounded-xl bg-white px-2">
           <button className="p-2">
             {/* TODO: Focus search box */}
-            <SearchIcon className="h-5 w-5 text-slate-500" />
+            <MagnifyingGlassIcon className="h-5 w-5 text-gray-500" />
           </button>
           <input
             type="text"
@@ -63,7 +63,7 @@ const Contents: React.FC = () => {
           />
           <button onClick={() => setIsFilterEnabled(v => !v)} className="p-2">
             {/* TODO: Extract icon wrapper */}
-            <FilterIcon className="h-5 w-5 text-slate-500" />
+            <FunnelIcon className="h-5 w-5 text-gray-500" />
           </button>
         </div>
         {isFilterEnabled && (

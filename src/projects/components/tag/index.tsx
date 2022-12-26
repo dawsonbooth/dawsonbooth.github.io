@@ -12,7 +12,7 @@ const Tag: React.FC<Props> = ({ active, onClick, children }) => {
     <button
       onClick={onClick}
       className={classNames(
-        'select-none whitespace-nowrap rounded-full bg-slate-200 px-2 py-1 text-sm',
+        'select-none whitespace-nowrap rounded-full bg-gray-200 px-2 py-1 text-sm',
         {
           'opacity-50': !active,
         },

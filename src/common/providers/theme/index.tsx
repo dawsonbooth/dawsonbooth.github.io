@@ -4,7 +4,7 @@ import { useSnapshot } from 'valtio'
 
 type Theme = 'light' | 'dark' | 'system'
 
-const themes: Theme[] = ['light', 'dark', 'system']
+const themes: Theme[] = ['light', 'dark']
 
 const store = proxyWithPersist<{
   theme: Theme
